@@ -54,19 +54,31 @@ c.execute("""CREATE TABLE IF NOT EXISTS instrument_album (
 	FOREIGN KEY (album_id) REFERENCES album(album_id))
 	""")
 
-bands = [(1, 'White Ward', 1, 3), (2, 'Drudkh', 2, 1), (3, 'Cukor Bila Smerť', 3, 2)]
+bands = [
+	(1, 'White Ward', 1, 3), 
+	(2, 'Drudkh', 2, 1), 
+	(3, 'Cukor Bila Smerť', 3, 2)
+	]
 
 for band in bands:
 	c.execute("INSERT INTO band VALUES (?, ?, ?, ?)", (band))
 	conn.commit()
 
-stages = [(1, 'Old joy', '16:00'), (2, 'Mystery', '16:30'), (3, 'Post-black', '17:00')]
+stages = [
+	(1, 'Old joy', '16:00'), 
+	(2, 'Mystery', '16:30'), 
+	(3, 'Post-black', '17:00')
+	]
 
 for stage in stages:
 	c.execute("INSERT INTO eskadron_fest_stage_name VALUES (?, ?, ?)", (stage))
 	conn.commit()
 
-labels = [(1, 'Debemur Morti Productions', 'Phil Void', 'France'), (2, 'Season of Mist', 'Michael Berberian', 'France'), (3, 'Koka Records', 'Volodymyr Nakonetchny', 'Ukraine')]
+labels = [
+	(1, 'Debemur Morti Productions', 'Phil Void', 'France'), 
+	(2, 'Season of Mist', 'Michael Berberian', 'France'), 
+	(3, 'Koka Records', 'Volodymyr Nakonetchny', 'Ukraine')
+	]
 
 for label in labels:
 	c.execute("INSERT INTO record_label VALUES (?, ?, ?, ?)", (label))
@@ -111,7 +123,7 @@ instruments = [
 	(5, 'drums'),
 	(6, 'keyboard'),
 	(7, 'cello')
-]
+	]
 
 for instrument in instruments:
 	c.execute("INSERT INTO instrument VALUES (?, ?)", (instrument))
@@ -138,7 +150,7 @@ instruments_albums = [
 	(6, 4), 
 	(6, 3), 
 	(7, 3)
-]
+	]
 
 for instrument_album in instruments_albums:
  	c.execute("INSERT INTO instrument_album VALUES (?, ?)", (instrument_album))
